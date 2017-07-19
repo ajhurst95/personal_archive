@@ -1,0 +1,7 @@
+this.echo("That is all of my story, for then I knew he was a man—I knew then that they had been men, neither gods nor demons. It is a great knowledge, hard to tell and believe. They were men—they went a dark road, but they were men. I had no fear after that—I had no fear going home, though twice I fought off the dogs and once I was hunted for two days by the Forest People. When I saw my father again, I prayed and was purified. He touched my lips and my breast, he said, \"You went away a boy. You come back a man and a priest.\" I said, \"Father, they were men! I have been in the Place of the Gods and seen it! Now slay me, if it is the law—but still I know they were men.\"");
+this.echo("\n");
+this.echo("He looked at me out of both eyes. He said, \"The law is not always the same shape—you have done what you have done. I could not have done it my time, but you come after me. Tell!\"");
+this.echo("\n");
+this.echo("I told and he listened. After that, I wished to tell all the people but he showed me otherwise. He said, \"Truth is a hard deer to hunt. If you eat too much truth at once, you may die of the truth. It was not idly that our fathers forbade the Dead Places.\" He was right—it is better the truth should come little by little. I have learned that, being a priest. Perhaps, in the old days, they ate knowledge too fast.");
+this.echo("\n");
+this.echo("\n");

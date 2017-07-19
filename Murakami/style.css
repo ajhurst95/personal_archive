@@ -1,0 +1,29 @@
+*{
+	border: solid 1px;
+}
+body{
+	background-image: url("vfabm.jpg");
+}
+.boxes{
+	width: 120px;
+	height: 70px;
+}
+.bluebox{
+	background-color: turquoise;
+	position: relative;
+	top: 20px;
+	left: 70px;
+	z-index: 4;
+}
+.redbox{
+	background-color: red;
+	position: fixed;
+	z-index: 3;
+}
+img.logo{
+	z-index: 2;
+	height: 170px;
+	display: block;
+	margin: 0px left;
+	background-attachment: fixed;
+}

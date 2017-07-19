@@ -1,0 +1,7 @@
+this.echo("After a time, I myself was allowed to go into the dead houses and search for metal. So I learned the ways of those houses—and if I saw bones, I was no longer afraid. The bones are light and old—sometimes they will fall into dust if you touch them. But that is a great sin.");
+this.echo("\n");
+this.echo("I was taught the chants and the spells—l was taught how to stop the running of blood from a wound and many secrets. A priest must know many secrets—that was what my father said.");
+this.echo("\n");
+this.echo("If the hunters think we do all things by chants and spells, they may believe so—it does not hurt them. I was taught how to read in the old books and how to make the old writings—that was hard and took a long time. My knowledge made me happy—it was like a fire in my heart. Most of all, I liked to hear of the Old Days and the stories of the gods. I asked myself many questions that I could not answer, but it was good to ask them. At night, I would lie awake and listen to the wind—it seemed to me that it was the voice of the gods as they flew through the air.");
+this.echo("\n");
+this.echo("\n");
