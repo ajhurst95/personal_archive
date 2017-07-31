@@ -27,3 +27,17 @@ img.logo{
 	margin: 0px left;
 	background-attachment: fixed;
 }
+@media only screen and (max-width: 480px){
+	body{
+		font-size: 12px;
+	}
+}
+
+.btn{
+  background: blue;
+  transition: background 0.4s;
+}
+
+.btn:hover{
+  background: red;
+}
