@@ -1,12 +1,19 @@
 *{
-	/*border: solid white 1px;*/
-}
+/*	border: solid white 1px;
+*/}
 ul{
 	margin: 20px 0;
 	padding: 0px;
 }
 body{
 	background: black;
+	margin: 0;
+	padding: 0;
+}
+audio{
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 img.noaa{
 	width: 18vw;
@@ -19,49 +26,55 @@ img.noaa{
  	position: relative;
 }
 
-
 li.letter{
-	background-color: #000000;
+	background-color: transparent;
 	overflow: hidden;
 	position: relative;
 	display: inline-block;
 }
-li.letter.asterisk{
+.hidden{
+	display: none;
+}
+.video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+.video iframe {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+    
+.video.overlay {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.5);
+}
 
+.letter.show-hide-video{
+	width: 18vw;
+	height: 18vw;
+	background-color: black;
+	opacity: .75;
+	cursor: pointer;
 }
-.letter.asterisk.b1{
-	width:5vw;
-	height:10vw;
-	background: lightgray;
-	left: 6vw;
-	margin: auto;
+.letter.show-hide-video:hover{
+	background-color(0, 0, 0, .5);
+	opacity: 1;
 }
-.letter.asterisk.b2{
-	width:10vw;
-	height:5vw;
-	background: lightgray;
-	position: absolute;
-	top: 6vw;
-	margin: auto;
-}
-.letter.asterisk.b3{
-	width: 5vw;
-	height: 14vw;
-	-webkit-transform: skew(40deg);
-	background: lightgray;
-	position: absolute;
-	left: 6vw;
-	vertical-align: center;
-
-}
-.letter.asterisk.b4{
-	width: 5vw;
-	height: 14vw;
-	-webkit-transform: skew(-40deg);
-	background: lightgray;
-	position: absolute;
-	left: 6vw;
-	vertical-align: center;
+.letter.show-hide-video.hiddenbutton{
+	width: 18vw;
+	height: 18vw;
+	background-color: lightgrays;
+	opacity: .75;
 }
 .letter.play-button-outer{
  	width: 18vw;
@@ -87,6 +100,40 @@ li.letter.asterisk{
 .play-button-outer:hover .play-button {
   opacity: 1;
 }
+.play-button.pause{
+	width: 4vw;
+	height: 17vw;
+	/*border-color: darkgray;*/
+	border: solid darkgray;
+	/*border-top: 200px;
+	border-bottom: 200px;*/
+	background-color: black;
+	opacity: .75;
+	margin: auto;
+	z-index: 5;
+}
+.letter.arrow{
+	margin: 0 auto;
+  	top: 25%;
+  	width: 0;
+  	height: 0;
+  	border-top: 9vw solid transparent;
+	border-right: 18vw solid darkgray;
+	border-bottom: 9vw solid transparent;
+  	opacity: .75; 
+}
+.letter.arrow-outer{
+ 	width: 18vw;
+ 	height: 18vw;
+ 	background-color: rgba(0, 0, 0, .25);
+ 	cursor: pointer;
+ 	margin: auto;
+ 	vertical-align: center;
+}
+.arrow-outer:hover .arrow {
+  opacity: 1;
+}
+
 li.letter.A{
 
 }
@@ -94,7 +141,7 @@ li.letter.A{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(20deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 9.7vw;
 }
@@ -102,7 +149,7 @@ li.letter.A{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(-20deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 3vw;
 }
@@ -112,19 +159,19 @@ li.letter.B{
 .letter.B.rectangle{
 	width:9vw;
 	height:18vw;
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 }
 .letter.B.topcircle{
 	width: 18vw;
 	height: 9vw;
-	background: lightgray;
+	background: darkgray;
 	border-radius: 50%;
 }
 .letter.B.bottomcircle{
 	width: 18vw;
 	height: 9vw;
-	background: lightgray;
+	background: darkgray;
 	border-radius: 50%;
 	position: absolute;
 }
@@ -135,13 +182,13 @@ li.letter.C{
 .letter.C.rectangle{
 	width:9vw;
 	height:18vw;
-	background: lightgray;
+	background: darkgray;
 	float: right;
 }
 .letter.C.circle{
 	width: 18vw;
 	height: 18vw;
-	background: lightgray;
+	background: darkgray;
 	border-radius: 50%;
 	border: none;
 }
@@ -152,13 +199,13 @@ li.letter.D{
 .letter.D.rectangle{
 	width:9vw;
 	height:18vw;
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 }
 .letter.D.circle{
 	width: 18vw;
 	height: 18vw;
-	background: lightgray;
+	background: darkgray;
 	border-radius: 50%;
 	border: none;
 }
@@ -168,31 +215,100 @@ li.letter.E{
 .letter.E.rectangle1{
 	width: 18vw;
 	height: 4vw;
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 }
 .letter.E.rectangle2{
 	width: 18vw;
 	height: 4vw;
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	top: 7vw;
 }
 .letter.E.rectangle3{
 	width: 18vw;
 	height: 4vw;
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	top: 14vw;
 }
 li.letter.F{
 
 }
+.letter.F.rectangle1{
+	width: 18vw;
+	height: 4vw;
+	background: darkgray;
+	position: absolute;
+}
+.letter.F.rectangle2{
+	width: 18vw;
+	height: 4vw;
+	background: darkgray;
+	position: absolute;
+	top: 7vw;
+}
+
 li.letter.G{
 
 }
+.letter.G.circle{
+
+	width: 18vw;
+	height: 18vw;
+	background: darkgray;
+	border-radius: 50%;
+	border: none;
+	position: absolute;
+}
+.letter.G.cut1{
+	/*width: 4vw;
+	height: 8vw;
+	background: darkgray;
+	position: absolute;
+	right: 0;
+	bottom: 0;*/
+	width: 8vw;
+	height: .5vw;
+	/*-webkit-transform: skew(45deg);*/
+	background: black;
+	position: absolute;
+	right: 0vw;
+	top: 9vw;
+	
+}
+.letter.G.cut2{
+	width: .5vw;
+	height: 6vw;
+	/*-webkit-transform: skew(45deg);*/
+	background: black;
+	position: absolute;
+	left: 10vw;
+	bottom: 3vw;
+}
 li.letter.H{
 
+}
+.letter.H.rectangle{
+	width: 18vw;
+	height: 5vw;
+	background: darkgray;
+	position: absolute;
+	top: 6.5vw;
+}
+.letter.H.rectangle2{
+	width: 5vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
+	left: 0;
+}
+.letter.H.rectangle3{
+	width: 5vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
+	right: 0;
 }
 li.letter.I{
 
@@ -200,30 +316,98 @@ li.letter.I{
 .letter.I.rectangle{
 	width: 6vw;
 	height: 18vw;
-	background: lightgray;
+	background: darkgray;
 	margin: auto;
 }
 li.letter.J{
 
 }
+.letter.J.rectangle{
+	width: 5vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
+	right: 0;
+}
+.letter.J.rectangle2{
+	width: 18vw;
+	height: 5vw;
+	background: darkgray;
+	position: absolute;
+	bottom: 0vw;
+}
 li.letter.K{
 
+}
+.letter.K.rectangle{
+	width: 5vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
+	left: 0;
+}
+.letter.K.triangle{
+  	top: 25%;
+  	width: 0;
+  	height: 0;
+  	border-top: 9vw solid transparent;
+	border-right: 13vw solid darkgray;
+	border-bottom: 9vw solid transparent;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 li.letter.L{
 
 }
+.letter.L.rectangle1{
+	width: 5vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
+	left: 0;
+}
+.letter.L.rectangle2{
+	width: 18vw;
+	height: 5vw;
+	background: darkgray;
+	position: absolute;
+	bottom: 0vw;
+}
 li.letter.M{
 
 }
-li.letter.N{
+.letter.M.rectangle1{
+	width: 4vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
 
+}
+.letter.M.rectangle2{
+	width: 4vw;
+	height: 9vw;
+	background: darkgray;
+	position: absolute;
+	left: 7vw;
+	top: 0vw;
+
+}
+.letter.M.rectangle3{
+	width: 4vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
+	right: 0vw;
+}
+li.letter.N{
 
 }
 .letter.N.slant{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(40deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 7vw;
 }
@@ -233,27 +417,139 @@ li.letter.O{
 .letter.O.circle{
 	width: 18vw;
 	height: 18vw;
-	background: lightgray;
+	background: darkgray;
 	border-radius: 50%;
 	border: none;
 }
 li.letter.P{
 
 }
+.letter.P.circle{
+	width: 19vw;
+	height: 14vw;
+	background: darkgray;
+	border-radius: 40%;
+	position: absolute;
+	left: 2.5vw;
+	top: -.7vw;
+}
+.letter.P.rectangle{
+	width:5vw;
+	height:18vw;
+	background: darkgray;
+	position: absolute;
+	left: 0;
+}
 li.letter.Q{
 
+}
+.letter.Q.circle{
+	width: 18vw;
+	height: 18vw;
+	background: darkgray;
+	border-radius: 50%;
+	border: none;
+	position: absolute;
+}
+.letter.Q.rectangle{
+	width: 5vw;
+	height: 18vw;
+	-webkit-transform: skew(43deg);
+	background: darkgray;
+	position: absolute;
+	left: 18vw;
+	top: 12vw;
 }
 li.letter.R{
 
 }
+.letter.R.circle{
+	width: 19vw;
+	height: 14vw;
+	background: darkgray;
+	border-radius: 40%;
+	position: absolute;
+	left: -2.5vw;
+	top: -.7vw;
+}
+.letter.R.rectangle{
+	width: 5vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
+	left: 0;
+}
+.letter.R.slant{
+	width: 7vw;
+	height: 18vw;
+	-webkit-transform: skew(60deg);
+	background: darkgray;
+	position: absolute;
+	left: 7vw;
+	top: 6vw;
+}
 li.letter.S{
 
+}
+.letter.S.toptrap{
+	border-bottom: 5vw solid darkgray;
+    border-left: 2.5vw solid transparent;
+    border-right: 2.5vw solid transparent;
+    height: 0;
+    width: 12vw;
+    position: static;
+}
+.letter.S.bottomtrap{
+	border-top: 5vw solid darkgray;
+    border-left: 2.5vw solid transparent;
+    border-right: 2.5vw solid transparent;
+    height: 0;
+    width: 12vw;
+    position: absolute;
+    bottom: 0;
+}
+.letter.S.slant{
+	width: 7vw;
+	height: 8.5vw;
+	-webkit-transform: skew(50deg);
+	background: darkgray;
+	position: absolute;
+	left: 5vw;
+	top: 4.7vw;
 }
 li.letter.T{
 
 }
+.letter.T.rectangle1{
+	width: 18vw;
+	height: 5vw;
+	background: darkgray;
+	position: absolute;
+	top: 0;
+}
+.letter.T.rectangle2{
+	width: 5vw;
+	height: 18vw;
+	background: darkgray;
+	margin: auto;
+}
+
 li.letter.U{
 
+}
+.letter.U.rectangle{
+	width:18vw;
+	height:9vw;
+	background: darkgray;
+	position: absolute;
+	top: 0;
+}
+.letter.U.circle{
+	width: 18vw;
+	height: 18vw;
+	background: darkgray;
+	border-radius: 50%;
+	position: absolute;
 }
 li.letter.V{
 
@@ -262,7 +558,7 @@ li.letter.V{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(20deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 3vw;
 }
@@ -270,7 +566,7 @@ li.letter.V{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(-20deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 9.7vw;
 }
@@ -280,14 +576,14 @@ li.letter.W{
 .letter.W.rectangle1{
 	width: 4vw;
 	height: 18vw;
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 
 }
 .letter.W.rectangle2{
 	width: 4vw;
 	height: 9vw;
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 7vw;
 	bottom: 0vw;
@@ -296,7 +592,7 @@ li.letter.W{
 .letter.W.rectangle3{
 	width: 4vw;
 	height: 18vw;
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	right: 0vw;
 }
@@ -305,7 +601,7 @@ li.letter.W{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(15deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 2vw;
 	border: solid white 1px;
@@ -314,7 +610,7 @@ li.letter.W{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(-15deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 3vw;
 	border: solid white 1px;
@@ -323,7 +619,7 @@ li.letter.W{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(15deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 5vw;
 	border: solid white 1px;
@@ -332,7 +628,7 @@ li.letter.W{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(-15deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 11vw;
 	border: solid white 1px;
@@ -340,20 +636,175 @@ li.letter.W{
 li.letter.X{
 
 }
+.letter.X.slant1{
+	width: 5vw;
+	height: 18vw;
+	-webkit-transform: skew(37deg);
+	background: darkgray;
+	position: absolute;
+	left: 6.5vw;
+}
+.letter.X.slant2{
+	width: 5vw;
+	height: 18vw;
+	-webkit-transform: skew(-37deg);
+	background: darkgray;
+	position: absolute;
+	left: 6.5vw;
+}
+.letter.X.triangle1{
+	width: 0;
+    height: 0;
+    border-top: 9vw solid transparent;
+    border-left: 9vw solid darkgray;
+    border-bottom: 9vw solid transparent;
+    position: absolute;
+}
+.letter.X.triangle2{
+	width: 0;
+    height: 0;
+    border-top: 9vw solid transparent;
+    border-right: 9vw solid darkgray;
+    border-bottom: 9vw solid transparent;
+    position: absolute;
+    left: 9vw;
+}
 li.letter.Y{
 
+}
+.letter.Y.rectangle{
+	width: 5vw;
+	height: 18vw;
+	position: absolute;
+	background: darkgray;
+	left: 6.5vw;
+}
+.letter.Y.triangle{
+	width: 0;
+    height: 0;
+    border-right: 9vw solid transparent;
+    border-top: 9vw solid darkgray;
+    border-left: 9vw solid transparent;
+    position: absolute;
+    top: 0;
 }
 li.letter.Z{
 
 }
+.letter.Z.toptrap{
+	border-bottom: 5vw solid darkgray;
+    border-left: 2.5vw solid transparent;
+    border-right: 2.5vw solid transparent;
+    height: 0;
+    width: 12vw;
+    position: static;
+}
+.letter.Z.bottomtrap{
+	border-top: 5vw solid darkgray;
+    border-left: 2.5vw solid transparent;
+    border-right: 2.5vw solid transparent;
+    height: 0;
+    width: 12vw;
+    position: absolute;
+    bottom: 0;
+}
+.letter.Z.slant{
+	width: 7vw;
+	height: 8.5vw;
+	-webkit-transform: skew(-50deg);
+	background: darkgray;
+	position: absolute;
+	left: 5vw;
+	top: 4.7vw;
+}
 li.letter.one{
+
+}
+.letter.one.rectangle{
+	width: 6vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
+	left: 7vw;
+}
+/*.letter.one.rectangle2{
+	width: 0;
+	height: 0;
+	border-bottom: 9vw solid darkgray;
+	border-left: 9vw solid transparent;
+	border-top: 6vw solid transparent;
+	position: absolute;
+	left: -.9vw;
+}*/
+.letter.one.rectangle2{
+	width: 6vw;
+	height: 6vw;
+	background-color: darkgray;
+	position: absolute;
+	left: 3vw;
 
 }
 li.letter.two{
 
 }
+.letter.two.trapezoid{
+	border-bottom: 5vw solid darkgray;
+    border-left: 2.5vw solid transparent;
+    border-right: 5vw solid transparent;
+    height: 0;
+    width: 12vw;
+    position: static;
+}
+.letter.two.slant{
+	width: 7vw;
+	height: 18vw;
+	-webkit-transform: skew(-60deg);
+	background: darkgray;
+	position: absolute;
+	left: -3vw;
+}
+.letter.two.rectangle{
+	width: 18vw;
+	height: 5vw;
+	background: darkgray;
+	position: absolute;
+	bottom: 0;
+}
+.letter.two.rectangle2{
+	width: 5vw;
+	height: 4vw;
+	background: darkgray;
+	position: absolute;
+}
 li.letter.three{
 
+}
+.letter.three.rectangle1{
+	width: 18vw;
+	height: 4vw;
+	background: darkgray;
+	position: absolute;
+}
+.letter.three.rectangle2{
+	width: 18vw;
+	height: 4vw;
+	background: darkgray;
+	position: absolute;
+	top: 7vw;
+}
+.letter.three.rectangle3{
+	width: 18vw;
+	height: 4vw;
+	background: darkgray;
+	position: absolute;
+	top: 14vw;
+}
+.letter.three.rectangle4{
+	width: 5vw;
+	height: 18vw;
+	background: darkgray;
+	position: absolute;
+	right: 0;
 }
 li.letter.four{
 
@@ -362,7 +813,7 @@ li.letter.four{
   	top: -10%;
   	width: 0;
   	height: 0;
-	border-right: 13vw solid lightgray;
+	border-right: 13vw solid darkgray;
 	border-top: 10vw solid transparent;
 	position: absolute;
 	
@@ -370,13 +821,13 @@ li.letter.four{
 .letter.four.rectangle{
 	width: 5vw;
 	height: 18vw;
-	background: lightgray;
+	background: darkgray;
 	float: right;
 }
 .letter.four.rectangle2{
 	width: 18vw;
 	height: 4vw;
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	top: 45%;
 	
@@ -384,8 +835,46 @@ li.letter.four{
 li.letter.five{
 
 }
+.letter.five.toprectangle{
+	width: 18vw;
+	height: 4vw;
+	background: darkgray;
+	position: absolute;
+}
+.letter.five.leftrectangle{
+	width: 4vw;
+	height: 4vw;
+	background: darkgray;
+	position: absolute;
+	left: 0;
+}
+.letter.five.midrectangle{
+
+}
+.letter.five.rightrect{
+
+}
+.letter.five.bottomtrap{
+
+}
 li.letter.six{
 
+}
+.letter.six.circle{
+	width: 19vw;
+	height: 14vw;
+	background: darkgray;
+	border-radius: 40%;
+	position: absolute;
+	left: 2.5vw;
+	bottom: -.7vw;
+}
+.letter.six.rectangle{
+	width:5vw;
+	height:18vw;
+	background: darkgray;
+	position: absolute;
+	left: 0;
 }
 li.letter.seven{
 
@@ -393,21 +882,51 @@ li.letter.seven{
 .letter.seven.toprectangle{
 	width: 18vw;
 	height: 4vw;
-	background: lightgray;
+	background: darkgray;
 }
 .letter.seven.slant{
 	width: 5vw;
 	height: 18vw;
 	-webkit-transform: skew(-45deg);
-	background: lightgray;
+	background: darkgray;
 	position: absolute;
 	left: 5vw;
 }
 li.letter.eight{
 
 }
+.letter.eight.topcircle{
+	width: 18vw;
+	height: 9vw;
+	background: darkgray;
+	border-radius: 50%;
+}
+.letter.eight.bottomcircle{
+	width: 18vw;
+	height: 9vw;
+	background: darkgray;
+	border-radius: 50%;
+	position: absolute;
+}
 li.letter.nine{
 
+}
+
+.letter.nine.circle{
+	width: 19vw;
+	height: 14vw;
+	background: darkgray;
+	border-radius: 40%;
+	position: absolute;
+	left: 2.5vw;
+	top: -.7vw;
+}
+.letter.nine.rectangle{
+	width:5vw;
+	height:18vw;
+	background: darkgray;
+	position: absolute;
+	right: 0;
 }
 li.letter.zero{
 
@@ -415,10 +934,10 @@ li.letter.zero{
 .letter.zero.circle{
 	width: 18vw;
 	height: 18vw;
-	background: lightgray;
+	background: darkgray;
 	border-radius: 50%;
 	border: none;
-	z-index: 3;
+	z-index: 5;
 	position: absolute;
 }
 .letter.zero.slash{
@@ -428,5 +947,5 @@ li.letter.zero{
 	background: black;
 	position: absolute;
 	left: 9vw;
-	z-index: 4;
+	z-index: 6;
 }

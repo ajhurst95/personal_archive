@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>NOAA NDBC Buoy 44097</title>
 		<link href="drawingstyle.css" type="text/css" rel="stylesheet">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<!-- <script type="text/javascript" src="jquery.fullPage.js"></script> -->
 		<script type="text/javascript" src="drawingmain.js"></script>
+
+		<audio id="forecast" controls preload="none"> 
+			<source src="wxradio.wav" type="audio/wav">
+		</audio>
 	</head>
 	<body>
 		<div class="container">
 
+			<!-- <div class="hidevid" id="hidevimeo"> -->
+				<div class="video"><iframe src="https://player.vimeo.com/video/228022555?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+			<!--</div>-->
+
 			<ul>
-				<li class="letter">
-					<!-- <div class="letter asterisk b1"></div>
-					<div class="letter asterisk b2"></div>
-					<div class="letter asterisk b3"></div>
-					<div class="letter asterisk b4"></div> -->
+				<li class="letter container">
+					<div id="hide" class="letter show-hide-video"></div>
 				</li>
 				<li class="letter N">
 					<div class="letter N slant"></div>
@@ -35,12 +40,11 @@
 			</ul>
 			<ul>	
 				<li class="letter container">
-					  <div class="letter play-button-outer">
-					  	<div class="letter play-button" id="play"></div>
-					  	<audio id="forecast">
-							<source src="wxradio.wav">
-						</audio>
-					  </div>
+					<div class="letter play-button-outer">
+						<div class="letter play-button" id="play">
+							
+						</div>
+					</div>
 
 				</li>
 				<li class="letter N">
@@ -73,17 +77,22 @@
 				</li>
 				<li class="letter zero">
 					<div class="letter zero circle"></div>
-					<div class="letter zero slash"></div>
+					<div class="letter zero slash hidden"></div>
 				</li>
 				<li class="letter nine">
 					<div class="letter nine circle"></div>
+					<div class="letter nine rectangle"></div>
 				</li>
 				<li class="letter seven">
 					<div class="letter seven toprectangle"></div>
 					<div class="letter seven slant"></div>
 				</li>
 				
-				<li class="letter asterisk"></li>
+				<li class="letter link">
+					<div class="letter arrow-outer">
+						<a href="drawingwind.html"><div class="letter arrow"></div></a>
+					</div>
+				</li>
 				<li class="letter W">
 					<div class="letter W rectangle1"></div>
 					<div class="letter W rectangle2"></div>
@@ -100,8 +109,10 @@
 					<div class="letter D circle"></div>
 				</li>
 
-				<li class="letter asterisk">
-					
+				<li class="letter link">
+					<div class="letter arrow-outer">
+						<a href="drawingwave.html"><div class="letter arrow"></div></a>
+					</div>
 				</li>
 				<li class="letter W">
 					<div class="letter W rectangle1"></div>
