@@ -1,0 +1,20 @@
+html{ 
+    color: #000; background-color: #000; 
+}
+
+.content{
+    position: relative;
+    z-index: 10;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#light{
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    background: radial-gradient(rgb(231, 221, 122), #000);
+    
+}
