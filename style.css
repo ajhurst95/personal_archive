@@ -5,6 +5,12 @@ body, html{
 	font: 400 15px/1.8 "Lato", sans-serif;
 	background: black;
 }
+a:hover{
+	opacity: .35;
+}
+a{
+	color: white;
+}
 
 #background-layer{
 	z-index: -1;
@@ -21,6 +27,7 @@ body, html{
 }
 .caption{
 	position: absolute;
+	display: block;
 	left: 0;
 	top: 50%;
 	width:100%;
