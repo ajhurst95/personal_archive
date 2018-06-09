@@ -1,6 +1,6 @@
 
 var commandText = function(text){
-	return "[[g;#44f97d;]" + text + "]";
+    return "[[g;#44f97d;]" + text + "]";
 }
 
 var yellowText = function(text){
@@ -16,36 +16,36 @@ var datetime = "[[b;#F51818;]WARNING:] an interruption of service caused the hos
                 + currentdate.getSeconds() + "\n may or may not reflect actual time.";
 
 var App = {
-	init: function(ret){
-		if (typeof ret === 'undefined') ret = false;
-		var greetText =
-			"###################################################################\n"+
-			"\t                                                                 \n"+
-			"\t __    _    _______   _      _   _     _    ___    ____    _   _\n"+
-			"\t|  \\  | |  |  _____] | | _  | | | |   | |  / _ \\  |  _ \\  | | / |\n"+
-			"\t|   \\ | |  | |___    | || | | |  \\ \\  / / | | | | | |_\\ | | |/ /\n"+
-			"\t| |\\ \\| |  |  ___|   | || | | |   \\ \\/ /  | | | | |    /  |   /\n"+
-			"\t| | \\   |  | |_____  | |/  \\| |    \\  /   | |_| | | |\\ \\  | |\\ \\ \n"+
-			"\t|_|  \\__|  |_______] \\__|  |_/     |__|    \\___/  |_| |_| |_| \\_\\ \n"+ "\n"+
-			"#####################################################################\n"+
-			"\n"+
-			"By using this terminal you confirm that you are a priest and are the son of a priest.\n"+
-			"[[b;#F51818;]Use of this terminal by others can be dangerous or fatal].\n"+
-			"\n"+
-			"...\n"+
-			"...\n"+
-			"Now connected to the data center in: \t " + commandText("newyork") + "\n"+
-			"\n"+
-			"Please type " + commandText("menu") + " to see the list of available actions.";
-		if (!ret) {
+    init: function(ret){
+        if (typeof ret === 'undefined') ret = false;
+        var greetText =
+            "###################################################################\n"+
+            "\t                                                                 \n"+
+            "\t __    _    _______   _      _   _     _    ___    ____    _   _\n"+
+            "\t|  \\  | |  |  _____] | | _  | | | |   | |  / _ \\  |  _ \\  | | / |\n"+
+            "\t|   \\ | |  | |___    | || | | |  \\ \\  / / | | | | | |_\\ | | |/ /\n"+
+            "\t| |\\ \\| |  |  ___|   | || | | |   \\ \\/ /  | | | | |    /  |   /\n"+
+            "\t| | \\   |  | |_____  | |/  \\| |    \\  /   | |_| | | |\\ \\  | |\\ \\ \n"+
+            "\t|_|  \\__|  |_______] \\__|  |_/     |__|    \\___/  |_| |_| |_| \\_\\ \n"+ "\n"+
+            "#####################################################################\n"+
+            "\n"+
+            "By using this terminal you confirm that you are a priest and are the son of a priest.\n"+
+            "[[b;#F51818;]Use of this terminal by others can be dangerous or fatal].\n"+
+            "\n"+
+            "...\n"+
+            "...\n"+
+            "Now connected to the data center in: \t " + commandText("newyork") + "\n"+
+            "\n"+
+            "Please type " + commandText("menu") + " to see the list of available actions.";
+        if (!ret) {
             this.clear();                   //clear the screen first--not sure if I want to keep
-			this.echo("\n" + greetText);    //show the greeting text above. Need to rewrite so that it pulls from existing text files.
-		} else {
-			return greetText;
-		}
-	},
+            this.echo("\n" + greetText);    //show the greeting text above. Need to rewrite so that it pulls from existing text files.
+        } else {
+            return greetText;
+        }
+    },
 
-	menu: function(){
+    menu: function(){
         this.echo("");
         this.echo("|  " + commandText("init") + "               - Display initialization message");
         this.echo("");
@@ -63,11 +63,11 @@ var App = {
     },
 
     archive: function(){
-    	
-    	this.echo("");
+        
+        this.echo("");
         this.echo("A record of the first explorations of newyork since the great burning by John, son of John.");
-    	this.echo("|  " + commandText("entry01"));
-    	this.echo("|  " + commandText("entry02"));
+        this.echo("|  " + commandText("entry01"));
+        this.echo("|  " + commandText("entry02"));
         this.echo("|  " + commandText("entry03"));
         this.echo("|  " + commandText("entry04"));
         this.echo("|  " + commandText("entry05"));
