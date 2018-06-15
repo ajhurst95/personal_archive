@@ -4,18 +4,20 @@
 		<title>Andrew Hurst</title>
 
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<link href="plugins/jqueryterminal/jquery.terminal-1.5.0.min.css" rel="stylesheet"/>	
+		<link href="plugins/jqueryterminal/source/css/jquery.terminal-1.5.0.css" rel="stylesheet"/>	
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-		<script src="terminal/js/jquery.terminal-1.5.0.min.js"></script>
-		<script src="terminal/js/jquery.mousewheel-min.js"></script>
+		<script src="plugins/jqueryterminal/source/js/jquery.terminal-1.5.0.min.js"></script>
+		<script src="plugins/jqueryterminal/source/js/jquery.mousewheel-min.js"></script>
 		<script src='plugins/jqueryterminal/quaketerm.js'></script>
 
 		
 	</head>
 
 	<body>
+		<div id='tilda' class='tilda' style='display:none;'></div>
+
 		<div class='photo-container'>
 			<div class='caption'>
 				<span class="border">COMING SOON</span>
@@ -31,12 +33,7 @@
  		</div>
  		
  		<script>
-			jQuery(document).ready(function($) {
-			    $('#tilda').tilda(function(command, terminal) {
-			        terminal.echo("you typed command:  " + command);
-
-			    });
-			});
+			
  		</script>
 	</body>
 </html>
