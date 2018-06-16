@@ -28,6 +28,27 @@ var App = {
 
     },
 
+    init: function(){
+        if (typeof ret === 'undefined') ret = false;
+        var greettext = 'Welcome to the terminal section of this site!' +
+                        '\n' + 
+                        'I\'ll be updating this pretty often, but be sure to poke around.\n' + 
+                        'I\'ve put some easter eggs of mine in here, including some of my old projects, just for fun.\n' + 
+                        'Right now this site is pretty basic and crude. I\'ll slowly work on this as I have time.\n' + 
+                        '\n'+
+                        'For now, enter ' + commandText('menu') + ' to display the options on the site,\n' + 
+                        'and ' + commandText('init') + ' to show this message again.\n' + 
+                        '\n' + 
+                        commandText('clear') + ' will clear the window. Have fun!';
+        if (!ret) {
+            this.clear();                   //clear the screen first--not sure if I want to keep
+            this.echo("\n" + greettext);    //show the greeting text above. Need to rewrite so that it pulls from existing text files.
+        } else {
+            return greettext;
+        }
+
+    },
+
     navigation: function(){
         this.echo("");
         this.echo(commandText("back") +"        Go back one page.");
@@ -44,7 +65,15 @@ var App = {
 
     babylon: function(){
         window.location.href = 'projects/babylonterminal/www/html/index3.html';
-    }
+    },
+
+    getdate: function(){
+        this.echo("The current date is: " + yellowText(currentdate.toISOString().substring(0, 10)));
+        this.echo("\n");
+        this.echo(datetime);
+
+
+    },
 
 
 
