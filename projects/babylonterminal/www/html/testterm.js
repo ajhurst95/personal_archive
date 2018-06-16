@@ -44,6 +44,9 @@ var App = {
 			return greetText;
 		}
 	},
+    back: function(){
+        window.history.back();
+    },
 
 	menu: function(){
         this.echo("");

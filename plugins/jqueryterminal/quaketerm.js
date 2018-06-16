@@ -18,10 +18,37 @@ var datetime = "[[b;#F51818;]WARNING:] an interruption of service caused the hos
 
 
 var App = {
+
     menu: function(){
         this.echo("");
-        this.echo('menu options undefined as of yet!');
+        this.echo(commandText("menu"));
+        this.echo(commandText('navigation'));
+        this.echo(commandText('about'));
+        this.echo(commandText('credits'));
+
+    },
+
+    navigation: function(){
+        this.echo("");
+        this.echo(commandText("back") +"        Go back one page.");
+        this.echo(commandText('forward') +"     Go forward one page.");
+        this.echo(commandText('clear') + "      Clear the screen.");
+    },
+
+    back: function(){
+        window.history.back();
+    },
+    forward: function(){
+        window.history.forward();
+    },
+
+    babylon: function(){
+        window.location.href = 'projects/babylonterminal/www/html/index3.html';
     }
+
+
+
+
 };
 
 
@@ -41,9 +68,9 @@ var App = {
         var settings = {
             prompt: '~> ',
             name: 'tilda',
-            height: 200,
+            height: 250,
             enabled: false,
-            greetings: 'Quake like console',
+            greetings: 'You found the console! Not quite like bash, though. Type ' + commandText('init') + ' to get started.',
             keypress: function(e) {
                 if (e.which == 96) {
                     return false;
