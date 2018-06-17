@@ -17,13 +17,26 @@ a{
 	position: inline;
 	background: black;
 }
-.photo-container{
+#sec0{
 	background-image: url('resources/1/coldwalking.png');
+}
+#sec1{
+	background-image: url('resources/1/warmdrill.jpg');
+}
+#sec2{
+	background-image: url('resources/1/icesuit.jpg');
+}
+#sec3{
+	background-image: url('resources/1/areterock.jpg');
+	
+}
+.photo-container{
 	opacity: .85;
 	height: 100%;
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: block;
 }
 .caption{
 	position: absolute;

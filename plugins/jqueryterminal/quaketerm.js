@@ -23,6 +23,7 @@ var App = {
         this.echo("");
         this.echo(commandText("menu"));
         this.echo(commandText('navigation'));
+        this.echo(commandText('cv'));
         this.echo(commandText('about'));
         this.echo(commandText('credits'));
 
@@ -74,6 +75,20 @@ var App = {
 
 
     },
+
+    credits: function(){
+        this.echo("This mediocre site was built by " + commandText('Andrew Hurst') + ". If you inspected any .js files, you can tell I am not a dev.\n"+ "The terminal section" +
+                    " you are viewing now was built using the \n" + commandText("Jcubic JQuery Terminal") + " emulator made by " + commandText("Jakub Jankiewicz") + ".");
+    },
+
+    about: function(){
+        this.echo("This my personal site. It is a balance of some of my super amateur web design projects,\n" + 
+            "my professional things, and my passion for climbing and surfing in icy conditions.")
+    },
+    cv: function(){
+        window.location.href = 'cv.html';
+    }
+    
 
 
 
