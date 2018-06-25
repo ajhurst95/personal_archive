@@ -64,10 +64,6 @@ var App = {
         window.history.forward();
     },
 
-    babylon: function(){
-        window.location.href = 'projects/babylonterminal/www/html/index3.html';
-    },
-
     getdate: function(){
         this.echo("The current date is: " + yellowText(currentdate.toISOString().substring(0, 10)));
         this.echo("\n");
@@ -87,9 +83,16 @@ var App = {
     },
     cv: function(){
         window.location.href = 'cv.html';
-    }
+    },
     
-
+//HIDDEN FUN THINGS
+    
+    babylon: function(){
+        window.location.href = 'projects/babylonterminal/www/html/index3.html';
+    },
+    nighthike: function(){
+        window.location.href = 'projects/Night\ Hike/index.html';
+    }
 
 
 
