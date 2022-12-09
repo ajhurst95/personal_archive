@@ -1,0 +1,44 @@
+>>> exec(open("reserve_ss.py").read())
+
+DevTools listening on ws://127.0.0.1:62186/devtools/browser/a8373c3d-014f-4496-8539-d2b2908e6cd2
+Looking for availability on month: January, days: ['28', '27', '29'], between times: 5:00 PM and 8:00 PM
+Encountered month January 2023
+Month January found
+Encountered day: 13
+Encountered day: 14
+Encountered day: 15
+Encountered day: 18
+Encountered day: 19
+Encountered day: 20
+Encountered day: 21
+Encountered day: 22
+Encountered day: 25
+Encountered day: 26
+Encountered day: 27
+Day 27 found. Clicking button
+Encountered time 7:45 PM
+Time 7:45 PM found. Clicking button
+Time found
+Found availability. Sleeping for 10 minutes to complete reservation...
+[10364:4528:1201/120011.836:ERROR:device_event_log_impl.cc(215)] [12:00:11.837] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[10364:4528:1201/120011.839:ERROR:device_event_log_impl.cc(215)] [12:00:11.840] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[10364:5032:1201/120105.750:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+[13952:15356:1201/120205.752:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is
+
+DevTools listening on ws://127.0.0.1:60189/devtools/browser/8f93db27-e371-4e94-afc0-41a22184d9b1
+Looking for availability on month: January, days: ['28', '27', '29'], between times: 5:00 PM and 8:00 PM
+
+DevTools listening on ws://127.0.0.1:60205/devtools/browser/df5a80f7-9d7e-4e1a-9fce-c95a52e629e1
+Looking for availability on month: January, days: ['28', '27', '29'], between times: 5:00 PM and 8:00 PM
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<string>", line 189, in <module>
+  File "<string>", line 186, in continuous_reservations
+  File "<string>", line 181, in execute_reservations
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.2288.0_x64__qbz5n2kfra8p0\lib\threading.py", line 1096, in join
+    self._wait_for_tstate_lock()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.2288.0_x64__qbz5n2kfra8p0\lib\threading.py", line 1116, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+KeyboardInterrupt
+>>>
+PS C:\Users\Admin>
